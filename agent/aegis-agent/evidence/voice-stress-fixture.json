@@ -1,0 +1,23 @@
+{
+  "name": "aegis-interruption-recovery",
+  "hard_problem": "interruption_and_recovery",
+  "normal": [
+    "There is a fire in the engineering building. Two people are trapped.",
+    "Create the incident and acknowledge it concisely."
+  ],
+  "correction": [
+    "Correction: there are three people trapped.",
+    "Update the current incident; do not create a duplicate."
+  ],
+  "stress": [
+    "There is a fire near the main gate. Please verify the situation.",
+    "Interrupt while AEGIS is speaking or waiting: Stop. The location is actually the north gate, and nobody is trapped.",
+    "The final spoken state must reflect north gate and zero trapped people; stale work must not become current."
+  ],
+  "measurements": [
+    "end_of_user_turn_to_first_audio_ms",
+    "interruption_to_audio_stop_ms",
+    "correction_to_next_audio_ms",
+    "stale_result_spoken"
+  ]
+}
