@@ -1,6 +1,9 @@
 # AEGIS — Voice-Native Emergency Coordination
 
 AEGIS is a real-time, voice-first emergency coordination prototype. The judged interaction is speech-native: the user reports an emergency, corrects details while AEGIS is responding, and AEGIS maintains the latest structured incident state.
+## Demo
+
+🎥 **Demo Video:** https://youtu.be/Hc021J6WqBg
 
 ## Hackathon alignment
 

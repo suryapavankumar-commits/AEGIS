@@ -1,9 +1,7 @@
 # AEGIS Web Client
 
 Next.js browser client for the AEGIS realtime voice demo.
-## Demo
 
-🎥 **Demo Video:** https://youtu.be/Hc021J6WqBg
 
 ## Setup
 

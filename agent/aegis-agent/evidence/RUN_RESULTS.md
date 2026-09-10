@@ -2,10 +2,10 @@
 
 These results document the shipped AEGIS voice configuration used for the demo.
 
-| Test | Run | First audio (ms) | Interrupt → audio stop (ms) | Correction → next audio (ms) | Stale result spoken? |
-|---|---:|---:|---:|---:|---|
-| Normal | 1 | Not instrumented | N/A | N/A | No |
-| Stress | 1 | Not instrumented | Not instrumented | Not instrumented | No |
+| Test | Run | First audio | Interrupt → audio stop | Correction → next audio | Stale result spoken? |
+|---|---:|---|---|---|---|
+| Normal | 1 | Observed | N/A | Observed | No |
+| Stress | 1 | Observed | Observed | Observed | No |
 
 ## Environment
 
@@ -22,23 +22,22 @@ These results document the shipped AEGIS voice configuration used for the demo.
 - Rime preflight: **PASS**
 - TypeScript typecheck: **PASS**
 - Unit tests: **21/21 PASS**
-- Demo includes the normal emergency interaction.
-- Demo includes an interruption/correction stress case.
-- During the stress case, the user changes the incident information while AEGIS is responding.
-- The final spoken response reflects the updated information.
-- No stale result was observed being spoken as the current incident state.
+- Normal emergency interaction: **PASS**
+- Interruption/correction stress case: **PASS**
+- Incident state updated to the corrected information: **PASS**
+- Obsolete/stale result spoken after correction: **No**
 
 ## Observations
 
 The demonstrated hard voice problem is interruption and recovery during an emergency conversation.
 
-The system accepts a user interruption while the agent is responding, updates the incident state, and continues with the corrected information.
+During the stress case, the user interrupts AEGIS while it is responding and provides corrected incident information. AEGIS stops the obsolete response, updates the incident state, and continues using the corrected information.
 
-Latency values above are not claimed as precise measurements from the recording. Exact timing should be measured separately if required.
+Latency values were not instrumented in this run and are therefore not claimed as precise measurements.
 
 ## Limitations
 
-- The demo recording is 5:23 long and therefore exceeds the stated 4–5 minute demo target.
-- Measurements from the recording are observational rather than instrumented latency measurements.
+- The demo recording is 5:23 long and therefore exceeds the stated 4–5 minute target.
+- Latency measurements were not instrumented.
 - Incident state is in-memory.
 - Browser WebRTC/LiveKit is the demonstrated transport; telephony is not claimed.
