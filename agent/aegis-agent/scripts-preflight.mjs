@@ -1,5 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });
 import fs from 'node:fs';
-
 const required = ['LIVEKIT_URL', 'LIVEKIT_API_KEY', 'LIVEKIT_API_SECRET', 'RIME_API_KEY'];
 const missing = required.filter((name) => !process.env[name]);
 const model = process.env.RIME_MODEL ?? 'coda';
